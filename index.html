@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OptimaSEO - Solusi Digital Marketing Terpercaya</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #0ea5e9;
+            --accent: #8b5cf6;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --success: #10b981;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #334155;
+            background-color: #f1f5f9;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: var(--dark);
+        }
+        
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+        }
+        
+        .navbar-brand {
+            font-weight: 800;
+            font-size: 28px;
+            color: var(--primary) !important;
+        }
+        
+        .navbar-brand span {
+            color: var(--accent);
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            margin: 0 10px;
+            color: var(--dark) !important;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary) !important;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            padding: 10px 25px;
+            font-weight: 500;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: #1d4ed8;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+        }
+        
+        .btn-outline-primary {
+            color: var(--primary);
+            border-color: var(--primary);
+            padding: 10px 25px;
+            font-weight: 500;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline-primary:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+        }
+        
+        /* Hero Section */
+        #hero {
+            background: linear-gradient(135deg, #e0f2fe 0%, #dbeafe 100%);
+            padding: 100px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #475569;
+        }
+        
+        .hero-img {
+            position: relative;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        /* Layanan Section */
+        #layanan {
+            padding: 100px 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.8rem;
+            position: relative;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+        
+        .card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            height: 100%;
+            margin-bottom: 30px;
+        }
+        
+        .card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 30px auto 20px;
+            color: white;
+            font-size: 28px;
+        }
+        
+        .card-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        /* Tentang Kami Section */
+        #tentang {
+            padding: 100px 0;
+            background: linear-gradient(to bottom, #eff6ff, #dbeafe);
+        }
+        
+        .about-content h2 {
+            font-size: 2.8rem;
+            margin-bottom: 25px;
+        }
+        
+        .about-content p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: #475569;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-item h3 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        
+        /* Testimoni Section */
+        #testimoni {
+            padding: 100px 0;
+            background-color: white;
+        }
+        
+        .testimonial-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            margin: 20px;
+            position: relative;
+        }
+        
+        .testimonial-card:after {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 5rem;
+            color: var(--primary);
+            opacity: 0.1;
+            font-family: serif;
+        }
+        
+        .client-img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 20px;
+        }
+        
+        .client-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .client-info h5 {
+            margin-bottom: 5px;
+        }
+        
+        .stars {
+            color: #fbbf24;
+            margin-bottom: 15px;
+        }
+        
+        /* CTA Section */
+        #cta {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            text-align: center;
+        }
+        
+        #cta h2 {
+            color: white;
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+        
+        #cta p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+        }
+        
+        .btn-light {
+            background-color: white;
+            color: var(--primary);
+            font-weight: 600;
+            padding: 12px 35px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-light:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: #cbd5e1;
+            padding: 70px 0 30px;
+        }
+        
+        .footer-title {
+            color: white;
+            margin-bottom: 25px;
+            font-size: 1.3rem;
+        }
+        
+        .footer-links a {
+            display: block;
+            color: #94a3b8;
+            text-decoration: none;
+            margin-bottom: 12px;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #334155;
+            color: white;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            border-top: 1px solid #334155;
+            padding-top: 20px;
+            margin-top: 50px;
+            text-align: center;
+            color: #94a3b8;
+        }
+        
+        /* Responsiveness */
+        @media (max-width: 992px) {
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.3rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Optima<span>SEO</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#hero">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#layanan">Layanan</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#tentang">Tentang</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#testimoni">Testimoni</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#cta">Kontak</a></li>
+                </ul>
+                <div class="ms-lg-3 mt-3 mt-lg-0">
+                    <a href="#" class="btn btn-primary">Konsultasi Gratis</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <h1>Tingkatkan Visibilitas Online Bisnis Anda</h1>
+                        <p class="lead">Kami membantu bisnis Anda mencapai peringkat teratas di mesin pencari dan meningkatkan lalu lintas organik dengan strategi SEO terbaru.</p>
+                        <div class="d-flex flex-wrap gap-3">
+                            <a href="#layanan" class="btn btn-primary">Layanan Kami</a>
+                            <a href="#cta" class="btn btn-outline-primary">Konsultasi Gratis</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-img text-center">
+                        <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="SEO Illustration" class="img-fluid rounded-3">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Layanan Section -->
+    <section id="layanan">
+        <div class="container">
+            <div class="section-title">
+                <h2>Layanan Kami</h2>
+                <p class="lead">Solusi lengkap untuk kebutuhan digital marketing Anda</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div class="card-body text-center">
+                            <h3 class="card-title">SEO On-Page</h3>
+                            <p class="card-text">Optimasi konten, struktur website, dan elemen teknis untuk meningkatkan peringkat di mesin pencari.</p>
+                            <a href="#" class="btn btn-link text-primary text-decoration-none">Pelajari Lebih Lanjut →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-link"></i>
+                        </div>
+                        <div class="card-body text-center">
+                            <h3 class="card-title">SEO Off-Page</h3>
+                            <p class="card-text">Strategi membangun backlink berkualitas tinggi untuk meningkatkan otoritas domain Anda.</p>
+                            <a href="#" class="btn btn-link text-primary text-decoration-none">Pelajari Lebih Lanjut →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-pen"></i>
+                        </div>
+                        <div class="card-body text-center">
+                            <h3 class="card-title">Content Marketing</h3>
+                            <p class="card-text">Konten berkualitas tinggi yang menarik dan mengoptimalkan konversi pengunjung.</p>
+                            <a href="#" class="btn btn-link text-primary text-decoration-none">Pelajari Lebih Lanjut →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="card-body text-center">
+                            <h3 class="card-title">Analisis Keyword</h3>
+                            <p class="card-text">Penelitian kata kunci strategis untuk menargetkan audiens yang tepat.</p>
+                            <a href="#" class="btn btn-link text-primary text-decoration-none">Pelajari Lebih Lanjut →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div class="card-body text-center">
+                            <h3 class="card-title">SEO Lokal</h3>
+                            <p class="card-text">Optimasi untuk bisnis lokal agar ditemukan pelanggan di sekitar Anda.</p>
+                            <a href="#" class="btn btn-link text-primary text-decoration-none">Pelajari Lebih Lanjut →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <div class="card-body text-center">
+                            <h3 class="card-title">SEO Teknis</h3>
+                            <p class="card-text">Audit dan perbaikan teknis website untuk performa optimal di mesin pencari.</p>
+                            <a href="#" class="btn btn-link text-primary text-decoration-none">Pelajari Lebih Lanjut →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tentang Kami Section -->
+    <section id="tentang">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Tentang Kami" class="img-fluid rounded-3 shadow">
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-content ps-lg-5">
+                        <h2>Tentang OptimaSEO</h2>
+                        <p>OptimaSEO adalah agensi digital marketing khusus SEO yang berfokus pada hasil nyata untuk bisnis Anda. Dengan tim ahli berpengalaman lebih dari 10 tahun, kami membantu klien dari berbagai industri mencapai tujuan bisnis mereka melalui strategi SEO terukur.</p>
+                        <p>Kami percaya pada pendekatan berbasis data dan transparansi penuh. Setiap strategi yang kami buat didasarkan pada analisis mendalam dan disesuaikan dengan kebutuhan spesifik bisnis Anda.</p>
+                        
+                        <div class="stats">
+                            <div class="stat-item">
+                                <h3>250+</h3>
+                                <p>Klien Puas</p>
+                            </div>
+                            <div class="stat-item">
+                                <h3>98%</h3>
+                                <p>Retensi Klien</p>
+                            </div>
+                            <div class="stat-item">
+                                <h3>15+</h3>
+                                <p>Ahli SEO</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimoni Section -->
+    <section id="testimoni">
+        <div class="container">
+            <div class="section-title">
+                <h2>Apa Kata Klien Kami</h2>
+                <p class="lead">Testimoni dari berbagai bisnis yang telah sukses bersama kami</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="testimonial-card">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="mb-4">"Berkat OptimaSEO, traffic website kami meningkat 300% dalam 6 bulan. Konversi penjualan juga naik signifikan. Sangat profesional dan hasilnya terukur!"</p>
+                        <div class="d-flex align-items-center">
+                            <div class="client-img">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client">
+                            </div>
+                            <div class="client-info">
+                                <h5>Budi Santoso</h5>
+                                <p class="mb-0">Pemilik TokoBajuOnline</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 mb-4">
+                    <div class="testimonial-card">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="mb-4">"Tim OptimaSEO sangat memahami kebutuhan bisnis kami. Laporan bulanan yang detail dan rekomendasi strategi yang tepat membuat kami percaya terus menggunakan jasa mereka."</p>
+                        <div class="d-flex align-items-center">
+                            <div class="client-img">
+                                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client">
+                            </div>
+                            <div class="client-info">
+                                <h5>Dewi Anggraini</h5>
+                                <p class="mb-0">Marketing Manager RestoSehat</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 mb-4">
+                    <div class="testimonial-card">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="mb-4">"Dalam waktu 3 bulan, website kami sudah muncul di halaman pertama Google untuk kata kunci utama. Pelayanan sangat responsif dan solutif. Recommended!"</p>
+                        <div class="d-flex align-items-center">
+                            <div class="client-img">
+                                <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Client">
+                            </div>
+                            <div class="client-info">
+                                <h5>Agus Setiawan</h5>
+                                <p class="mb-0">Direktur JasaBangun</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="cta">
+        <div class="container">
+            <h2>Siap Meningkatkan Bisnis Anda?</h2>
+            <p>Jadwalkan konsultasi gratis dengan ahli SEO kami dan temukan strategi terbaik untuk meningkatkan visibilitas online bisnis Anda.</p>
+            <a href="#" class="btn btn-light">Mulai Sekarang</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <h3 class="footer-title">OptimaSEO</h3>
+                    <p>Kami membantu bisnis mencapai potensi maksimal di dunia digital melalui strategi SEO terukur dan hasil nyata.</p>
+                    <div class="social-links mt-4">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-4 mb-5 mb-md-0">
+                    <h5 class="footer-title">Tautan</h5>
+                    <div class="footer-links">
+                        <a href="#hero">Beranda</a>
+                        <a href="#layanan">Layanan</a>
+                        <a href="#tentang">Tentang</a>
+                        <a href="#testimoni">Testimoni</a>
+                        <a href="#cta">Kontak</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 mb-5 mb-md-0">
+                    <h5 class="footer-title">Layanan</h5>
+                    <div class="footer-links">
+                        <a href="#">SEO On-Page</a>
+                        <a href="#">SEO Off-Page</a>
+                        <a href="#">Content Marketing</a>
+                        <a href="#">Analisis Keyword</a>
+                        <a href="#">SEO Teknis</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-4">
+                    <h5 class="footer-title">Kontak</h5>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-map-marker-alt me-2"></i> Jl. Digital No. 123, Jakarta</p>
+                        <p><i class="fas fa-phone-alt me-2"></i> +62 21 1234 5678</p>
+                        <p><i class="fas fa-envelope me-2"></i> info@optimaseo.id</p>
+                        <p><i class="fas fa-clock me-2"></i> Senin-Jumat: 9:00 - 17:00</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 OptimaSEO. Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
